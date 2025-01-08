@@ -18,7 +18,10 @@
         },
         "openai-key": {
             "proxyurl": "https://juxlauth.elearn.rwth-aachen.de/llm_feedback"
-        }
+        },
+    "authentication": {
+        "python-environment": "MYBINDER_TEST_TOKEN"
+    }
 
     }
 }
