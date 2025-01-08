@@ -6,4 +6,7 @@ pip install --no-cache-dir -r extensions-pip.txt
 echo "Enabling JupyterLab extensions..."
 jupyter lab build
 
+echo "Verifying JupyterLab extensions..."
+jupyter labextension list
+
 echo "Setup complete. Environment is ready!"
