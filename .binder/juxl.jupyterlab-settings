@@ -1,0 +1,14 @@
+{
+  "@juxl/juxl-extension:juxl": {
+    "lrs": {
+      "url": "https://juxlauth.elearn.rwth-aachen.de/",
+      "authentication": {
+        "python-environment": "JUPYTERHUB_API_TOKEN"
+      }
+    },
+    "agent": "pseudonymous",
+    "platform": {
+      "profile": "codingai"
+    }
+  }
+}
