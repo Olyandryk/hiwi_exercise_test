@@ -1,8 +1,44 @@
 #!/bin/bash
 
+# Install JupyterLab extensions for Juxl
+echo "Installing Juxl extensions..."
+jupyter labextension install @juxl/juxl-extension@^3.1.1
+jupyter labextension install @juxl/logging@^3.1.1
+
+# Configure Juxl settings
+echo "Configuring Juxl settings..."
+mkdir -p /opt/conda/share/jupyter/lab/settings/
+cat <<EOF > /opt/conda/share/jupyter/lab/settings/overrides.json
+{
+  "@juxl/juxl-extension:juxl": {
+    "lrs": {
+      "url": "https://juxlauth.elearn.rwth-aachen.de/",
+      "authentication": {
+        "python-environment": "JUPYTERHUB_API_TOKEN"
+      }
+    },
+    "agent": "pseudonymous",
+    "platform": {
+      "profile": "codingai"
+    }
+  },
+  "jupyterlab-feedback:plugin": {
+    "cell-metadata": {
+      "pattern": ["IS.Code", "IS.Markdown"],
+      "key": "cell_id"
+    },
+    "openai-key": {
+      "proxyurl": "https://juxlauth.elearn.rwth-aachen.de/llm_feedback"
+    }
+  }
+}
+EOF
+
+# Build JupyterLab to apply the changes
 echo "Building JupyterLab..."
 jupyter lab build
 
+# Verify JupyterLab extensions
 echo "Verifying JupyterLab extensions..."
 jupyter labextension list
 
