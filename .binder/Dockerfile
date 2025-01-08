@@ -1,5 +1,5 @@
-# Use RWTH courses base image
-ARG BASE_IMAGE=registry.git.rwth-aachen.de/jupyter/profiles/rwth-courses:latest
+# Use a public Jupyter Docker Stack image compatible with MyBinder
+ARG BASE_IMAGE=jupyter/base-notebook:latest
 FROM ${BASE_IMAGE}
 
 # Install Juxl extensions (Learning Analytics)
