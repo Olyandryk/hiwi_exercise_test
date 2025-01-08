@@ -3,6 +3,9 @@
 echo "Installing JupyterLab extensions from extensions-pip.txt..."
 pip install --no-cache-dir -r extensions-pip.txt
 
+echo "Installing jupyterlab-feedback from GitHub..."
+pip install git+https://github.com/your-org/jupyterlab-feedback.git
+
 echo "Enabling JupyterLab extensions..."
 jupyter lab build
 
