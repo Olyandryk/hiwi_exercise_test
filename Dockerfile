@@ -1,5 +1,5 @@
 # Specify parent image with a fixed tag for reproducibility
-FROM jupyter/base-notebook:2023-07-18
+FROM jupyter/base-notebook:python-3.10.9
 
 # Set environment variables
 ARG NB_USER=jovyan
