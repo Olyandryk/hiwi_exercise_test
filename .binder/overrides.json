@@ -1,9 +1,9 @@
 {
     "@juxl/juxl-extension:juxl": {
         "lrs": {
-            "url": "https://juxlauth.elearn.rwth-aachen.de/",
+            "url":"https://juxlauth.elearn.rwth-aachen.de/",
             "authentication": {
-                "python-environment": "JUPYTERHUB_API_TOKEN"
+                "python-environment":"JUPYTERHUB_API_TOKEN"
             }
         },
         "agent": "pseudonymous",
@@ -19,5 +19,6 @@
         "openai-key": {
             "proxyurl": "https://juxlauth.elearn.rwth-aachen.de/llm_feedback"
         }
+
     }
 }
