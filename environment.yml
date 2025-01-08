@@ -17,5 +17,4 @@ dependencies:
   - pip:
     - jupyterlab-hide-cells==3.0.1
     - nbgitpuller
-    - jupyterlab-feedback
     - jupyterlab_autorun_cells
