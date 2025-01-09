@@ -1,21 +1,5 @@
 #!/bin/bash
 
-# Install JupyterLab extensions
-echo "Installing JupyterLab extensions..."
-jupyter labextension install \
-    @juxl/juxl-extension@^3.1.1 \
-    @juxl/logging@^3.1.1
-
-# Copy Juxl settings
-echo "Copying overrides.json..."
-mkdir -p ~/.jupyter/lab/settings/
-cp overrides.json ~/.jupyter/lab/settings/overrides.json
-
-# Set Jupyter Notebook configuration
-echo "Setting up Jupyter Notebook configuration..."
-mkdir -p ~/.jupyter/
-echo "c.NotebookApp.allow_origin = 'https://juxlauth.elearn.rwth-aachen.de'" >> ~/.jupyter/jupyter_notebook_config.py
-
 # Install JupyterLab Feedback extension
 echo "Installing JupyterLab Feedback extension..."
 pip install jupyterlab_feedback-0.6.2-py3-none-any.whl
@@ -23,9 +7,3 @@ pip install jupyterlab_feedback-0.6.2-py3-none-any.whl
 # Build JupyterLab
 echo "Building JupyterLab..."
 jupyter lab build
-
-# Verify JupyterLab extensions
-echo "Verifying JupyterLab extensions..."
-jupyter labextension list
-
-echo "Setup complete. Environment is ready!"
