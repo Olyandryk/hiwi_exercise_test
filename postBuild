@@ -6,16 +6,17 @@ jupyter labextension install \
     @juxl/juxl-extension@^3.1.1 \
     @juxl/logging@^3.1.1
 
-# Copy settings for juxl extension
-echo "Copying overrides.json for Juxl..."
-mkdir -p /opt/conda/share/jupyter/lab/settings/
-cp juxl.jupyterlab-settings /opt/conda/share/jupyter/lab/settings/overrides.json
+# Copy Juxl settings
+echo "Copying overrides.json..."
+mkdir -p ~/.jupyter/lab/settings/
+cp overrides.json ~/.jupyter/lab/settings/overrides.json
 
-# Configure Jupyter Notebook to allow origin
+# Set Jupyter Notebook configuration
 echo "Setting up Jupyter Notebook configuration..."
-echo "c.NotebookApp.allow_origin = 'https://juxlauth.elearn.rwth-aachen.de'" >> /etc/jupyter/jupyter_notebook_config.py
+mkdir -p ~/.jupyter/
+echo "c.NotebookApp.allow_origin = 'https://juxlauth.elearn.rwth-aachen.de'" >> ~/.jupyter/jupyter_notebook_config.py
 
-# Install JupyterLab feedback extension
+# Install JupyterLab Feedback extension
 echo "Installing JupyterLab Feedback extension..."
 pip install jupyterlab_feedback-0.6.2-py3-none-any.whl
 
@@ -27,5 +28,4 @@ jupyter lab build
 echo "Verifying JupyterLab extensions..."
 jupyter labextension list
 
-# Setup complete
 echo "Setup complete. Environment is ready!"
