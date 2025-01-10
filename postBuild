@@ -8,7 +8,7 @@ jupyter labextension install @juxl/logging@^3.1.1
 # Copying overrides.json to the appropriate location
 echo "Copying JupyterLab settings overrides..."
 mkdir -p /opt/conda/share/jupyter/lab/settings/
-cp overrides.json /opt/conda/share/jupyter/lab/settings/overrides.json
+cp overrides.json /srv/conda/envs/notebook/share/jupyter/lab/settings/overrides.json
 
 # Updating Jupyter Notebook configuration to allow specific origin
 echo "Updating Jupyter Notebook configuration..."
